@@ -1,0 +1,21 @@
+Headline (Hero Section):
+=K Hi, I'm Corey  Software Developer & Creator
+
+Subheadline:
+From the open road to the digital world, I specialize in building web applications that make life easier, smarter, and more enjoyable.
+
+About Me Section:
+I'm a software developer with a strong focus on TypeScript, JavaScript, Next.js, React, and Node.js. I'm also deeply experienced in database querying, with expertise in MongoDB and Supabase.
+
+While I currently work as a truck driver, my true passion lies in creating digital solutions  crafting websites and applications that help people solve problems, save time, and even have fun in the process.
+
+Recently, I've been leveraging AI tools to build faster and smarter, accelerating the way I prototype, debug, and deliver projects. This has opened new possibilities in how I approach problem-solving and has sharpened my ability to create innovative solutions quickly.
+
+Curiosity is at the heart of who I am. I love to learn continuously, experiment with new technologies, and push myself to grow as both a developer and a person.
+
+Outside of coding, I've spent over a decade on the mats and earned the rank of black belt in Brazilian Jiu-Jitsu  a journey that taught me discipline, resilience, and the art of solving problems one step at a time.
+
+Call to Action Section:
+=€ Let's build something meaningful together.
+
+[ Get in Touch ]
