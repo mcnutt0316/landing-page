@@ -1,11 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 
-const Hero: React.FC = () => {
-  const techStack = ['TypeScript', 'JavaScript', 'Next.js', 'React', 'Node.js', 'MongoDB', 'Supabase'];
+const Hero = () => {
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 bg-background relative overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 pb-8 sm:pb-12 bg-background relative overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content Column */}
@@ -40,16 +39,10 @@ const Hero: React.FC = () => {
               </button>
             </div>
 
-            {/* Tech Stack Display */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 lg:max-w-none max-w-2xl mx-auto lg:mx-0">
-              {techStack.map((tech) => (
-                <span
-                  key={tech}
-                  className="inline-flex items-center px-3 py-1.5 text-sm font-mono font-medium bg-foreground/5 text-foreground/70 rounded-md border border-foreground/10"
-                >
-                  {tech}
-                </span>
-              ))}
+            {/* Value Proposition Teaser */}
+            <div className="flex items-center justify-center lg:justify-start gap-2 text-sm text-foreground/60">
+              <span className="flex h-2 w-2 bg-green-500 rounded-full animate-pulse"></span>
+              <span className="font-mono">Available for new opportunities</span>
             </div>
           </div>
 

@@ -1,8 +1,8 @@
 import React from 'react';
 
-const About: React.FC = () => {
+const About = () => {
   return (
-    <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-background">
+    <section className="pt-8 sm:pt-12 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-sans font-bold text-foreground mb-6">
@@ -33,25 +33,58 @@ const About: React.FC = () => {
           </p>
         </div>
 
-        {/* Skills Grid */}
-        <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {[
-            'TypeScript',
-            'JavaScript', 
-            'Next.js',
-            'React',
-            'Node.js',
-            'MongoDB',
-            'Supabase',
-            'AI Tools'
-          ].map((skill) => (
-            <div
-              key={skill}
-              className="flex items-center justify-center px-4 py-3 bg-foreground/5 text-foreground/80 rounded-lg border border-foreground/10 hover:bg-foreground/10 transition-colors duration-200"
-            >
-              <span className="font-mono text-sm font-medium">{skill}</span>
+        {/* Technical Skills Section */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-sans font-semibold text-foreground mb-8 text-center">
+            Technical Expertise
+          </h3>
+          
+          {/* Primary Skills - Prominent Display */}
+          <div className="mb-8">
+            <h4 className="text-lg font-medium text-foreground/80 mb-4 text-center">Core Technologies</h4>
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+              {[
+                'TypeScript',
+                'JavaScript', 
+                'Next.js',
+                'React',
+                'Node.js'
+              ].map((skill) => (
+                <div
+                  key={skill}
+                  className="flex items-center justify-center px-4 py-3 bg-accent text-accent-foreground rounded-lg border border-accent hover:bg-accent/90 transition-all duration-200 hover:scale-105 shadow-sm"
+                >
+                  <span className="font-mono text-sm font-medium">{skill}</span>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Secondary Skills */}
+          <div className="mb-8">
+            <h4 className="text-lg font-medium text-foreground/80 mb-4 text-center">Databases & Tools</h4>
+            <div className="flex flex-wrap justify-center gap-3">
+              {[
+                'MongoDB',
+                'Supabase',
+                'AI Tools'
+              ].map((skill) => (
+                <div
+                  key={skill}
+                  className="flex items-center justify-center px-4 py-3 bg-foreground/5 text-foreground/80 rounded-lg border border-foreground/10 hover:bg-foreground/10 transition-colors duration-200"
+                >
+                  <span className="font-mono text-sm font-medium">{skill}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Professional Approach */}
+          <div className="text-center">
+            <p className="text-base text-foreground/70 italic">
+              Continuously expanding my toolkit to deliver cutting-edge solutions
+            </p>
+          </div>
         </div>
       </div>
     </section>
