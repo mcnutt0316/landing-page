@@ -96,34 +96,36 @@ const Hero = () => {
               {/* Floating Tech Orbit Animation */}
               <div className="absolute inset-0 pointer-events-none">
                 {[
-                  { name: 'react' as TechName, delay: '0s', radius: '140%' },
-                  { name: 'typescript' as TechName, delay: '3s', radius: '135%' },
-                  { name: 'nextjs' as TechName, delay: '6s', radius: '145%' },
-                  { name: 'javascript' as TechName, delay: '9s', radius: '150%' },
-                  { name: 'nodejs' as TechName, delay: '12s', radius: '138%' },
-                  { name: 'mongodb' as TechName, delay: '15s', radius: '142%' }
-                ].map((tech, index) => (
+                  { name: 'react' as TechName, delay: '0s', angle: 0 },
+                  { name: 'typescript' as TechName, delay: '3s', angle: 60 },
+                  { name: 'nextjs' as TechName, delay: '6s', angle: 120 },
+                  { name: 'javascript' as TechName, delay: '9s', angle: 180 },
+                  { name: 'nodejs' as TechName, delay: '12s', angle: 240 },
+                  { name: 'mongodb' as TechName, delay: '15s', angle: 300 }
+                ].map((tech) => (
                   <div
                     key={tech.name}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 orbit-container"
+                    className="absolute top-1/2 left-1/2 orbit-container group"
                     style={{
-                      width: tech.radius,
-                      height: tech.radius,
                       animationDelay: tech.delay,
-                      animationDuration: '20s'
+                      animationDuration: '18s'
                     }}
                   >
-                    <div className="relative w-full h-full orbit-rotation">
-                      <div 
-                        className="absolute -top-3 left-1/2 -translate-x-1/2 opacity-30 hover:opacity-60 transition-opacity duration-300"
-                        style={{
-                          transform: `rotate(-${index * 60}deg)`
-                        }}
-                      >
+                    <div 
+                      className="absolute orbit-icon opacity-80 hover:opacity-100 hover:scale-125 transition-all duration-300 cursor-pointer"
+                      style={{
+                        transform: `rotate(${tech.angle}deg) translateX(var(--orbit-radius)) rotate(-${tech.angle}deg)`
+                      }}
+                    >
+                      <div className="relative">
+                        {/* Enhanced background with stronger contrast and dual-layer system */}
+                        <div className="absolute inset-0 -z-10 bg-background/95 backdrop-blur-xl rounded-full scale-[1.8] group-hover:bg-background group-hover:scale-[1.9] transition-all duration-300 border-2 border-foreground/20 group-hover:border-foreground/30 shadow-xl shadow-foreground/10"></div>
+                        {/* Enhanced secondary glow layer for better depth */}
+                        <div className="absolute inset-0 -z-20 bg-accent/15 rounded-full scale-[2.2] blur-md group-hover:bg-accent/20 group-hover:scale-[2.3] transition-all duration-300"></div>
                         <TechIcon 
                           name={tech.name} 
-                          size="md" 
-                          glowEffect={false}
+                          size="lg" 
+                          glowEffect={true}
                           animate={false}
                         />
                       </div>
@@ -138,12 +140,25 @@ const Hero = () => {
       
       {/* Animation styles for orbit effect */}
       <style jsx>{`
+        /* CSS custom property for responsive orbit radius - optimized for visual hierarchy */
         .orbit-container {
-          animation: orbit 20s linear infinite;
+          --orbit-radius: 200px; /* Default for lg screens - creates 40px breathing room */
+          animation: orbit 18s linear infinite;
+          transform-origin: center center;
         }
         
-        .orbit-rotation {
-          animation: rotate 20s linear infinite reverse;
+        /* Responsive orbit radius adjustments */
+        @media (max-width: 1024px) {
+          .orbit-container {
+            --orbit-radius: 170px; /* md screens - maintains proportional spacing */
+          }
+        }
+        
+        @media (max-width: 640px) {
+          .orbit-container {
+            --orbit-radius: 140px; /* sm screens - adequate mobile spacing */
+            animation-duration: 22s; /* Slower on mobile for better UX */
+          }
         }
         
         @keyframes orbit {
@@ -155,13 +170,29 @@ const Hero = () => {
           }
         }
         
-        @keyframes rotate {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(-360deg);
-          }
+        /* Orbit icon positioning with proper centering */
+        .orbit-icon {
+          left: 50%;
+          top: 50%;
+          transform-origin: center center;
+          border-radius: 50%;
+          padding: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        /* Enhanced hover effects with professional glow and depth */
+        .orbit-icon:hover {
+          filter: drop-shadow(0 0 16px rgba(59, 130, 246, 0.5)) 
+                  drop-shadow(0 0 32px rgba(59, 130, 246, 0.25))
+                  drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+          transform: translateY(-2px);
+        }
+        
+        /* Group hover enhancement for better contrast */
+        .orbit-container:hover .orbit-icon {
+          opacity: 1;
         }
         
         /* Tech rotation animation for status indicator */
@@ -184,22 +215,62 @@ const Hero = () => {
           }
         }
         
-        /* Reduced motion preference support */
+        /* Improved accessibility for reduced motion */
         @media (prefers-reduced-motion: reduce) {
-          .orbit-container,
-          .orbit-rotation {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
+          .orbit-container {
+            animation: none !important;
+          }
+          .orbit-icon {
+            position: static !important;
+            transform: none !important;
+            display: inline-block;
+            margin: 0 8px 8px 0;
+            opacity: 0.8 !important;
+            left: auto !important;
+            top: auto !important;
+          }
+          .orbit-icon:hover {
+            opacity: 1 !important;
+            transform: scale(1.1) !important;
+            filter: none !important;
           }
         }
         
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-          .orbit-container {
-            animation-duration: 25s;
+        /* High contrast mode adjustments */
+        @media (prefers-contrast: high) {
+          .orbit-icon {
+            background: var(--background);
+            border: 2px solid var(--foreground);
+            opacity: 1 !important;
           }
-          .orbit-rotation {
-            animation-duration: 25s;
+          .orbit-icon:hover {
+            background: var(--accent);
+            border-color: var(--accent);
+          }
+        }
+        
+        /* Performance optimization for smooth animation */
+        .orbit-container,
+        .orbit-icon {
+          will-change: transform;
+          backface-visibility: hidden;
+          perspective: 1000px;
+        }
+        
+        /* Glass effect for modern appearance */
+        .orbit-icon > div > div {
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+        }
+        
+        /* Responsive enhancements for better mobile experience */
+        @media (max-width: 480px) {
+          .orbit-container {
+            --orbit-radius: 110px; /* Extra small screens - optimal spacing for mobile */
+            animation-duration: 24s; /* Even slower for smallest screens */
+          }
+          .orbit-icon {
+            padding: 2px;
           }
         }
       `}</style>
