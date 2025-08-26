@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import TechIcon, { TechName } from './TechIcon';
 
 const About = () => {
   return (
@@ -44,17 +47,27 @@ const About = () => {
             <h4 className="text-lg font-medium text-foreground/80 mb-4 text-center">Core Technologies</h4>
             <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
               {[
-                'TypeScript',
-                'JavaScript', 
-                'Next.js',
-                'React',
-                'Node.js'
-              ].map((skill) => (
+                { name: 'typescript' as TechName, label: 'TypeScript' },
+                { name: 'javascript' as TechName, label: 'JavaScript' }, 
+                { name: 'nextjs' as TechName, label: 'Next.js' },
+                { name: 'react' as TechName, label: 'React' },
+                { name: 'nodejs' as TechName, label: 'Node.js' }
+              ].map((skill, index) => (
                 <div
-                  key={skill}
-                  className="flex items-center justify-center px-4 py-3 bg-accent text-accent-foreground rounded-lg border border-accent hover:bg-accent/90 transition-all duration-200 hover:scale-105 shadow-sm"
+                  key={skill.name}
+                  className="flex items-center justify-center gap-3 px-4 py-3 bg-accent text-accent-foreground rounded-lg border border-accent hover:bg-accent/90 transition-all duration-300 hover:scale-105 shadow-sm group"
+                  style={{
+                    animationDelay: `${index * 0.1}s`,
+                    animation: 'fadeInUp 0.6s ease-out forwards'
+                  }}
                 >
-                  <span className="font-mono text-sm font-medium">{skill}</span>
+                  <TechIcon 
+                    name={skill.name} 
+                    size="lg" 
+                    glowEffect={true}
+                    animate={true}
+                  />
+                  <span className="font-mono text-sm font-medium">{skill.label}</span>
                 </div>
               ))}
             </div>
@@ -65,15 +78,25 @@ const About = () => {
             <h4 className="text-lg font-medium text-foreground/80 mb-4 text-center">Databases & Tools</h4>
             <div className="flex flex-wrap justify-center gap-3">
               {[
-                'MongoDB',
-                'Supabase',
-                'AI Tools'
-              ].map((skill) => (
+                { name: 'mongodb' as TechName, label: 'MongoDB' },
+                { name: 'supabase' as TechName, label: 'Supabase' },
+                { name: 'claude' as TechName, label: 'Claude AI' }
+              ].map((skill, index) => (
                 <div
-                  key={skill}
-                  className="flex items-center justify-center px-4 py-3 bg-foreground/5 text-foreground/80 rounded-lg border border-foreground/10 hover:bg-foreground/10 transition-colors duration-200"
+                  key={skill.name}
+                  className="flex items-center justify-center gap-3 px-4 py-3 bg-foreground/5 text-foreground/80 rounded-lg border border-foreground/10 hover:bg-foreground/10 transition-all duration-300 hover:scale-105 group"
+                  style={{
+                    animationDelay: `${(index + 5) * 0.1}s`,
+                    animation: 'fadeInUp 0.6s ease-out forwards'
+                  }}
                 >
-                  <span className="font-mono text-sm font-medium">{skill}</span>
+                  <TechIcon 
+                    name={skill.name} 
+                    size="md" 
+                    glowEffect={true}
+                    animate={true}
+                  />
+                  <span className="font-mono text-sm font-medium">{skill.label}</span>
                 </div>
               ))}
             </div>
@@ -87,6 +110,29 @@ const About = () => {
           </div>
         </div>
       </div>
+      
+      {/* Animation keyframes - injected via style tag for performance */}
+      <style jsx>{`
+        @keyframes fadeInUp {
+          0% {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        /* Reduced motion preference support */
+        @media (prefers-reduced-motion: reduce) {
+          * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };
