@@ -1,0 +1,113 @@
+/* CSS custom property for responsive orbit radius - optimized for visual hierarchy */
+.orbitContainer {
+  --orbit-radius: 200px; /* Default for lg screens - creates 40px breathing room */
+  animation: orbit var(--animation-duration, 18s) linear infinite;
+  transform-origin: center center;
+}
+
+/* Responsive orbit radius adjustments */
+@media (max-width: 1024px) {
+  .orbitContainer {
+    --orbit-radius: 170px; /* md screens - maintains proportional spacing */
+  }
+}
+
+@media (max-width: 640px) {
+  .orbitContainer {
+    --orbit-radius: 140px; /* sm screens - adequate mobile spacing */
+    animation-duration: var(--mobile-animation-duration, 22s); /* Slower on mobile for better UX */
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: translate(-50%, -50%) rotate(var(--start-angle, 0deg));
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(calc(var(--start-angle, 0deg) + 360deg));
+  }
+}
+
+/* Orbit icon positioning with proper centering */
+.orbitIcon {
+  left: 50%;
+  top: 50%;
+  transform-origin: center center;
+  border-radius: 50%;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Enhanced hover effects with professional glow and depth */
+.orbitIcon:hover {
+  filter: drop-shadow(0 0 16px rgba(59, 130, 246, 0.5))
+    drop-shadow(0 0 32px rgba(59, 130, 246, 0.25))
+    drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15));
+  transform: translateY(-2px);
+}
+
+/* Group hover enhancement for better contrast */
+.orbitContainer:hover .orbitIcon {
+  opacity: 1;
+}
+
+/* Improved accessibility for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .orbitContainer {
+    animation: none !important;
+  }
+  .orbitIcon {
+    position: static !important;
+    transform: none !important;
+    display: inline-block;
+    margin: 0 8px 8px 0;
+    opacity: 0.8 !important;
+    left: auto !important;
+    top: auto !important;
+  }
+  .orbitIcon:hover {
+    opacity: 1 !important;
+    transform: scale(1.1) !important;
+    filter: none !important;
+  }
+}
+
+/* High contrast mode adjustments */
+@media (prefers-contrast: high) {
+  .orbitIcon {
+    background: var(--background);
+    border: 2px solid var(--foreground);
+    opacity: 1 !important;
+  }
+  .orbitIcon:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+}
+
+/* Performance optimization for smooth animation */
+.orbitContainer,
+.orbitIcon {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Glass effect for modern appearance */
+.orbitIcon > div > div {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Responsive enhancements for better mobile experience */
+@media (max-width: 480px) {
+  .orbitContainer {
+    --orbit-radius: 110px; /* Extra small screens - optimal spacing for mobile */
+    animation-duration: 24s; /* Even slower for smallest screens */
+  }
+  .orbitIcon {
+    padding: 2px;
+  }
+}

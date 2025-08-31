@@ -1,0 +1,22 @@
+/* Tech rotation animation for status indicator */
+.techRotateItem {
+  animation: techFadeInOut 8s infinite;
+}
+
+@keyframes techFadeInOut {
+  0%,
+  20% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  25%,
+  45% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50%,
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
