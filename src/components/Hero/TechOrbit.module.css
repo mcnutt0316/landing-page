@@ -8,13 +8,13 @@
 /* Responsive orbit radius adjustments */
 @media (max-width: 1024px) {
   .orbitContainer {
-    --orbit-radius: 170px; /* md screens - maintains proportional spacing */
+    --orbit-radius: 140px; /* md screens - maintains proportional spacing */
   }
 }
 
 @media (max-width: 640px) {
   .orbitContainer {
-    --orbit-radius: 140px; /* sm screens - adequate mobile spacing */
+    --orbit-radius: 105px; /* sm screens - adequate mobile spacing */
     animation-duration: var(--mobile-animation-duration, 22s); /* Slower on mobile for better UX */
   }
 }

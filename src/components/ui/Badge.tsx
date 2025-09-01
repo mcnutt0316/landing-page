@@ -7,7 +7,7 @@ const Badge = ({
   size = "md",
   className = "",
 }: BadgeProps) => {
-  const baseClasses = "inline-flex items-center rounded-full font-mono font-medium";
+  const baseClasses = "inline-flex items-center rounded-full font-mono font-medium relative z-10";
   
   const variantClasses = {
     default: "bg-foreground/5 text-foreground/70 border border-foreground/10",
