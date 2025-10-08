@@ -61,7 +61,7 @@ export const projects: Project[] = [
     status: 'completed',
     featured: false,
     links: {
-      demo: 'https://quotegen-pyfmbsw4i-mcnutt0316s-projects.vercel.app/',
+      demo: 'https://stoic-quote-gen.vercel.app/',
       github: '#', // Add your GitHub repo URL here
     },
     images: {
