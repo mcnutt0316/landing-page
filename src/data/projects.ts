@@ -176,6 +176,51 @@ export const projects: Project[] = [
       'Portfolio sites need to tell a story, not just showcase skills'
     ],
   },
+  {
+    id: 5,
+    slug: 'net-worth-tracker',
+    title: 'Net Worth Tracker',
+    description: 'A financial tracking application for monitoring assets, liabilities, and net worth over time with data visualization and insights.',
+    longDescription: 'A comprehensive financial management tool that helps users track their net worth by monitoring assets and liabilities. Built with modern web technologies, the application provides intuitive data visualization, transaction tracking, and financial insights to help users understand their financial health and make informed decisions.',
+    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Supabase'],
+    category: 'fullstack',
+    status: 'in-progress',
+    featured: false,
+    links: {
+      demo: 'https://net-worth-tracker-one.vercel.app/',
+      github: '#', // Add your GitHub repo URL here
+    },
+    images: {
+      hero: '/projects/net-worth-tracker-hero.jpg',
+      thumbnail: '/projects/net-worth-tracker-thumb.jpg',
+      gallery: ['/projects/net-worth-tracker-1.jpg', '/projects/net-worth-tracker-2.jpg'],
+    },
+    metadata: {
+      created_date: '2024-08',
+      updated_date: '2024-10',
+      duration: '2 months',
+      team_size: 1,
+    },
+    highlights: [
+      'Real-time net worth calculation and tracking',
+      'Secure user authentication with Supabase',
+      'Interactive data visualization for financial insights',
+      'Asset and liability management system',
+      'Responsive design for mobile and desktop use'
+    ],
+    challenges: [
+      'Implementing secure financial data storage and retrieval',
+      'Creating intuitive UX for complex financial data entry',
+      'Building real-time calculations and updates',
+      'Designing effective data visualizations for financial trends'
+    ],
+    lessons_learned: [
+      'Financial applications require careful attention to data accuracy',
+      'Supabase provides powerful backend capabilities with minimal setup',
+      'User privacy and security are paramount for financial tools',
+      'Clear data visualization helps users understand complex financial information'
+    ],
+  },
 ];
 
 // Helper functions for filtering projects
