@@ -6,7 +6,7 @@ export interface ProjectLinks {
 
 export interface ProjectImages {
   hero: string;
-  gallery?: string[];
+  gallery: string[];
   thumbnail: string;
 }
 

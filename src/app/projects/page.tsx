@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { projects } from "@/data/projects";
+import ProjectCarousel from "@/components/ProjectCarousel";
 
 const Projects = () => {
   const featuredProject = projects.find(p => p.featured);
@@ -67,10 +68,14 @@ const Projects = () => {
                   </a>
                 </div>
               </div>
-              
-              <div className="aspect-video bg-foreground/10 rounded-lg flex items-center justify-center">
-                <span className="text-foreground/60 text-sm">Project Screenshot</span>
-              </div>
+              <ProjectCarousel
+                images={[
+                  featuredProject.images.hero,
+                  featuredProject.images.thumbnail,
+                  ...featuredProject.images.gallery
+                ]}
+                projectTitle={featuredProject.title}
+              />
             </div>
           </div>
         </section>
@@ -90,10 +95,14 @@ const Projects = () => {
               className="bg-foreground/5 rounded-xl p-6 hover:bg-foreground/[0.07] transition-colors duration-200 group"
             >
               <div className="space-y-4">
-                <div className="aspect-video bg-foreground/10 rounded-lg flex items-center justify-center group-hover:bg-foreground/15 transition-colors duration-200">
-                  <span className="text-foreground/60 text-sm">Project Preview</span>
-                </div>
-                
+                <ProjectCarousel
+                  images={[
+                    project.images.hero,
+                    project.images.thumbnail,
+                    ...project.images.gallery
+                  ]}
+                  projectTitle={project.title}
+                />
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <h3 className="text-xl font-semibold text-foreground group-hover:text-accent transition-colors duration-200">
