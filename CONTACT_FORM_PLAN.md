@@ -107,15 +107,17 @@ Use React Context or prop drilling to share modal state.
 
 ## External Setup Required
 
-### Cloudflare Turnstile (5 min)
+### Cloudflare Turnstile ✅ DONE
 1. Go to https://dash.cloudflare.com/turnstile
 2. Add site → Get Site Key + Secret Key
 3. Choose "Managed" mode (invisible when possible)
 
-### Resend (5 min)
+### Resend ✅ DONE
 1. Sign up at https://resend.com
 2. Verify your domain OR use onboarding@resend.dev for testing
 3. Get API key from dashboard
+
+**Keys added to `.env.local`**
 
 ---
 
