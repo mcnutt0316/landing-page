@@ -7,9 +7,12 @@ import Badge from "../ui/Badge";
 import SocialLinks from "../ui/SocialLinks";
 import { socialLinks } from "../../constants/socialLinks";
 import { featuredTechnologies, animationConfig } from "../../constants/technologies";
+import { useContactModal } from "../../store/useContactModal";
 import styles from "./Hero.module.css";
 
 const HeroContent = () => {
+  const { openModal } = useContactModal();
+
   return (
     <div className="text-center lg:text-left space-y-8 order-2 lg:order-1">
       {/* Role Badge */}
@@ -40,7 +43,7 @@ const HeroContent = () => {
         <Button href="/projects" variant="primary" size="lg">
           View My Work
         </Button>
-        <Button variant="secondary" size="lg">
+        <Button variant="secondary" size="lg" onClick={openModal}>
           Get In Touch
         </Button>
       </div>

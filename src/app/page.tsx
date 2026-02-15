@@ -1,6 +1,7 @@
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import CallToAction from '@/components/CallToAction';
+import ContactModal from '@/components/ContactModal';
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <About />
       <CallToAction />
+      <ContactModal />
     </main>
   );
 }
