@@ -26,7 +26,7 @@ export default function ProjectsLayout({
               My Projects
             </h1>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              A collection of web applications and digital solutions I've built using modern technologies and creative problem-solving.
+              A collection of web applications and digital solutions I&apos;ve built using modern technologies and creative problem-solving.
             </p>
           </div>
         </div>

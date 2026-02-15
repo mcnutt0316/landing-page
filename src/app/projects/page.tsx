@@ -170,8 +170,8 @@ const Projects = () => {
           Interested in working together?
         </h2>
         <p className="text-foreground/70 mb-6 max-w-2xl mx-auto">
-          I'm always excited to take on new challenges and create meaningful digital solutions. 
-          Let's discuss how we can bring your ideas to life.
+          I&apos;m always excited to take on new challenges and create meaningful digital solutions.
+          Let&apos;s discuss how we can bring your ideas to life.
         </p>
         <Link
           href="/#contact"

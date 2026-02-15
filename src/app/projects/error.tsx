@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function ProjectsError({
   error,
   reset,
@@ -24,12 +26,12 @@ export default function ProjectsError({
           Try Again
         </button>
         
-        <a
+        <Link
           href="/"
           className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg border border-foreground/20 text-foreground hover:bg-foreground/5 focus:outline-none focus:ring-2 focus:ring-foreground/20 focus:ring-offset-2 focus:ring-offset-background transition-colors duration-200"
         >
           Back to Home
-        </a>
+        </Link>
       </div>
       
       {process.env.NODE_ENV === "development" && (
