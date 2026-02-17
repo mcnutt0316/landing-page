@@ -48,10 +48,13 @@ const About = () => {
             <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
               {[
                 { name: 'typescript' as TechName, label: 'TypeScript' },
-                { name: 'javascript' as TechName, label: 'JavaScript' }, 
+                { name: 'javascript' as TechName, label: 'JavaScript' },
+                { name: 'csharp' as TechName, label: 'C#' },
                 { name: 'nextjs' as TechName, label: 'Next.js' },
                 { name: 'react' as TechName, label: 'React' },
-                { name: 'nodejs' as TechName, label: 'Node.js' }
+                { name: 'reactnative' as TechName, label: 'React Native' },
+                { name: 'nodejs' as TechName, label: 'Node.js' },
+                { name: 'dotnetcore' as TechName, label: '.NET Core' }
               ].map((skill, index) => (
                 <div
                   key={skill.name}
@@ -80,6 +83,8 @@ const About = () => {
               {[
                 { name: 'mongodb' as TechName, label: 'MongoDB' },
                 { name: 'supabase' as TechName, label: 'Supabase' },
+                { name: 'github' as TechName, label: 'GitHub' },
+                { name: 'visualstudio' as TechName, label: 'Visual Studio' },
                 { name: 'claude' as TechName, label: 'Claude AI' }
               ].map((skill, index) => (
                 <div

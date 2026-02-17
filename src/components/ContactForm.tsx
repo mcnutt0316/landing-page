@@ -10,16 +10,18 @@ interface ContactFormProps {
   onClose: () => void;
 }
 
-const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: `Hi Corey,
+const DEFAULT_FORM_DATA = {
+  name: "",
+  email: "",
+  message: `Hi Corey,
 
 I came across your portfolio and was impressed by your work. I'd love to discuss a potential opportunity with you.
 
 Looking forward to connecting!`,
-  });
+};
+
+const ContactForm = ({ isOpen, onClose }: ContactFormProps) => {
+  const [formData, setFormData] = useState(DEFAULT_FORM_DATA);
   const [honeypot, setHoneypot] = useState("");
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -65,15 +67,7 @@ Looking forward to connecting!`,
       setTimeout(() => {
         onClose();
         setStatus("idle");
-        setFormData({
-          name: "",
-          email: "",
-          message: `Hi Corey,
-
-I came across your portfolio and was impressed by your work. I'd love to discuss a potential opportunity with you.
-
-Looking forward to connecting!`,
-        });
+        setFormData(DEFAULT_FORM_DATA);
         turnstileRef.current?.reset();
       }, 2000);
     } catch (error) {

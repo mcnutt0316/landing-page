@@ -8,18 +8,24 @@ interface TechOrbitItem extends Omit<TechItem, 'name'> {
 
 export const techOrbitItems: TechOrbitItem[] = [
   { name: "react", angle: 0 },
-  { name: "typescript", angle: 60 },
-  { name: "nextjs", angle: 120 },
-  { name: "javascript", angle: 180 },
-  { name: "nodejs", angle: 240 },
-  { name: "mongodb", angle: 300 },
+  { name: "typescript", angle: 45 },
+  { name: "csharp", angle: 90 },
+  { name: "nextjs", angle: 135 },
+  { name: "dotnetcore", angle: 180 },
+  { name: "javascript", angle: 225 },
+  { name: "reactnative", angle: 270 },
+  { name: "nodejs", angle: 315 },
 ];
 
 export const featuredTechnologies: TechName[] = [
   "react",
-  "typescript", 
+  "typescript",
   "nextjs",
-  "nodejs"
+  "nodejs",
+  "csharp",
+  "reactnative",
+  "dotnetcore",
+  "javascript"
 ];
 
 export const animationConfig: AnimationConfig = {

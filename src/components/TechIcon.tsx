@@ -4,15 +4,20 @@ import React from 'react';
 import Image from 'next/image';
 
 // Technology names and their corresponding icon paths
-export type TechName = 
-  | 'typescript' 
-  | 'javascript' 
-  | 'react' 
-  | 'nextjs' 
-  | 'nodejs' 
-  | 'mongodb' 
-  | 'supabase' 
-  | 'claude';
+export type TechName =
+  | 'typescript'
+  | 'javascript'
+  | 'react'
+  | 'reactnative'
+  | 'nextjs'
+  | 'nodejs'
+  | 'mongodb'
+  | 'supabase'
+  | 'claude'
+  | 'csharp'
+  | 'dotnetcore'
+  | 'github'
+  | 'visualstudio';
 
 // Size variants for responsive design
 export type TechIconSize = 'sm' | 'md' | 'lg' | 'xl';
@@ -73,6 +78,31 @@ const techConfig: Record<TechName, {
     path: '/icons/claude.svg',
     brandColor: '#d97757',
     label: 'Claude AI'
+  },
+  csharp: {
+    path: '/icons/csharp.svg',
+    brandColor: '#512BD4',
+    label: 'C#'
+  },
+  dotnetcore: {
+    path: '/icons/dotNET-core.svg',
+    brandColor: '#512BD4',
+    label: '.NET Core'
+  },
+  github: {
+    path: '/icons/GitHub.svg',
+    brandColor: 'var(--foreground)',
+    label: 'GitHub'
+  },
+  reactnative: {
+    path: '/icons/react-native.svg',
+    brandColor: '#61dafb',
+    label: 'React Native'
+  },
+  visualstudio: {
+    path: '/icons/Visual-Studio.svg',
+    brandColor: '#5C2D91',
+    label: 'Visual Studio'
   }
 };
 
@@ -153,7 +183,7 @@ const TechIcon: React.FC<TechIconProps> = ({
         height={sizeConfig.iconSize}
         className={`
           tech-icon transition-all duration-300
-          ${name === 'nextjs' ? 'dark:invert' : ''}
+          ${name === 'nextjs' || name === 'github' ? 'dark:invert' : ''}
         `}
         priority={size === 'lg' || size === 'xl'}
         loading={size === 'sm' ? 'lazy' : 'eager'}
