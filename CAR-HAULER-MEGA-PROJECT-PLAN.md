@@ -73,7 +73,7 @@ Make Car Hauler stand out:
 ### 6. Add Styling
 **File:** `src/app/globals.css`
 
-- Mega-project gradient theme (orange/red for logistics feel)
+- Mega-project gradient theme (Carvana blue/navy)
 - Timeline animation (line fills on scroll)
 - Trophy shine effect for hackathon badge
 - Sub-project card hover effects
@@ -82,16 +82,18 @@ Make Car Hauler stand out:
 
 ## Visual Design
 
-**Color Theme for Car Hauler:**
-- Primary: Orange (#f97316) - logistics/transportation feel
-- Gradient: Orange-600 to Red-600
-- Hackathon badge: Gold with trophy icon
+**Color Theme for Car Hauler (Carvana-inspired):**
+- Primary Blue: #2F7BEB (Carvana Blue)
+- Navy: #0D3C61 (Carvana Navy - text/dark elements)
+- Gold Accent: #C9A227 (Carvana Gold - highlights/badges)
+- Gradient: Blue (#2F7BEB) to Navy (#0D3C61)
+- Hackathon badge: Gold (#C9A227) with trophy icon
 
 **Status Badge Styles:**
-- Hackathon Winner - Gold/amber background
-- Deployed - Green
-- Learning - Blue/purple
-- In Development - Yellow
+- Hackathon Winner - Gold (#C9A227) background with trophy icon
+- Deployed - Carvana Blue (#2F7BEB)
+- Learning - Navy (#0D3C61)
+- In Development - Light Blue (#5A9CF0)
 
 ---
 
