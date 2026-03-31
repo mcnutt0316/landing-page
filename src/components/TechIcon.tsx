@@ -17,7 +17,8 @@ export type TechName =
   | 'csharp'
   | 'dotnetcore'
   | 'github'
-  | 'visualstudio';
+  | 'visualstudio'
+  | 'neon';
 
 // Size variants for responsive design
 export type TechIconSize = 'sm' | 'md' | 'lg' | 'xl';
@@ -103,6 +104,11 @@ const techConfig: Record<TechName, {
     path: '/icons/Visual-Studio.svg',
     brandColor: '#5C2D91',
     label: 'Visual Studio'
+  },
+  neon: {
+    path: '/icons/neon.svg',
+    brandColor: '#00e0d9',
+    label: 'Neon'
   }
 };
 

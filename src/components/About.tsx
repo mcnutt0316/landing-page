@@ -14,25 +14,17 @@ const About = () => {
           <div className="w-24 h-1 bg-accent mx-auto rounded-full"></div>
         </div>
 
-        <div className="space-y-8 text-lg leading-relaxed text-foreground/80">
+        <div className="space-y-6 text-lg leading-relaxed text-foreground/80">
           <p>
-            I&apos;m a software developer with a strong focus on <span className="font-medium text-foreground">TypeScript, JavaScript, Next.js, React, and Node.js</span>. I&apos;m also deeply experienced in database querying, with expertise in <span className="font-medium text-foreground">MongoDB and Supabase</span>.
+            I&apos;m a self-taught developer working in <span className="font-medium text-foreground">TypeScript, JavaScript, Next.js, React, and Node.js</span>, with a solid handle on databases like <span className="font-medium text-foreground">MongoDB, Supabase, and Neon</span>. I transitioned into software from truck driving because I genuinely love building things.
           </p>
 
           <p>
-            While I currently work as a truck driver, my true passion lies in creating digital solutions — crafting websites and applications that help people solve problems, save time, and even have fun in the process.
+            I lean hard into <span className="font-medium text-foreground">AI tools</span> to move faster and ship better work. It&apos;s changed how I prototype and debug, and I think it&apos;s just a smarter way to build.
           </p>
 
           <p>
-            Recently, I&apos;ve been leveraging <span className="font-medium text-foreground">AI tools to build faster and smarter</span>, accelerating the way I prototype, debug, and deliver projects. This has opened new possibilities in how I approach problem-solving and has sharpened my ability to create innovative solutions quickly.
-          </p>
-
-          <p>
-            <span className="font-medium text-foreground">Curiosity is at the heart of who I am.</span> I love to learn continuously, experiment with new technologies, and push myself to grow as both a developer and a person.
-          </p>
-
-          <p>
-            Outside of coding, I&apos;ve spent over a decade on the mats and earned the rank of <span className="font-medium text-foreground">black belt in Brazilian Jiu-Jitsu</span> — a journey that taught me discipline, resilience, and the art of solving problems one step at a time.
+            When I&apos;m not coding, I&apos;m on the mats. I&apos;m a <span className="font-medium text-foreground">Brazilian Jiu-Jitsu black belt</span> with over a decade of training. That sport taught me more about patience and problem-solving than anything else.
           </p>
         </div>
 
@@ -83,6 +75,7 @@ const About = () => {
               {[
                 { name: 'mongodb' as TechName, label: 'MongoDB' },
                 { name: 'supabase' as TechName, label: 'Supabase' },
+                { name: 'neon' as TechName, label: 'Neon' },
                 { name: 'github' as TechName, label: 'GitHub' },
                 { name: 'visualstudio' as TechName, label: 'Visual Studio' },
                 { name: 'claude' as TechName, label: 'Claude AI' }
@@ -107,12 +100,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Professional Approach */}
-          <div className="text-center">
-            <p className="text-base text-foreground/70 italic">
-              Continuously expanding my toolkit to deliver cutting-edge solutions
-            </p>
-          </div>
         </div>
       </div>
       
