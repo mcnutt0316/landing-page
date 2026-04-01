@@ -1,0 +1,32 @@
+name: Claude Code Review
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Review this pull request for code quality, correctness, and security.
+            Focus on:
+            - Bugs or edge cases (null handling, async issues, boundary conditions)
+            - Security issues (XSS, injection, unvalidated inputs, exposed secrets)
+            - Performance concerns (unnecessary re-renders, heavy computations)
+            - TypeScript correctness and type safety
+            - Tailwind/React best practices for Next.js projects
+            Post your findings as inline review comments on the relevant lines.
+          claude_args: "--max-turns 5"
