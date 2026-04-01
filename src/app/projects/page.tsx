@@ -1,8 +1,11 @@
-import Link from "next/link";
+"use client";
+
 import { projects } from "@/data/projects";
 import ProjectCarousel from "@/components/ProjectCarousel";
+import { useContactModal } from "@/store/useContactModal";
 
 const Projects = () => {
+  const { openModal } = useContactModal();
   const featuredProject = projects.find(p => p.featured);
   const otherProjects = projects.filter(p => !p.featured);
 
@@ -173,12 +176,12 @@ const Projects = () => {
           I&apos;m always excited to take on new challenges and create meaningful digital solutions.
           Let&apos;s discuss how we can bring your ideas to life.
         </p>
-        <Link
-          href="/#contact"
+        <button
+          onClick={openModal}
           className="inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-lg bg-accent text-accent-foreground hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 transition-colors duration-200"
         >
           Get In Touch
-        </Link>
+        </button>
       </section>
     </div>
   );
