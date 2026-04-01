@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ContactModal from "@/components/ContactModal";
 
 export const metadata: Metadata = {
   title: "Projects | Corey - Software Developer",
@@ -36,6 +37,7 @@ export default function ProjectsLayout({
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {children}
       </main>
+      <ContactModal />
     </div>
   );
 }
