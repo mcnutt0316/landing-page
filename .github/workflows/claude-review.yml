@@ -33,4 +33,4 @@ jobs:
             - TypeScript correctness and type safety
             - Tailwind/React best practices for Next.js projects
             Post your findings as inline review comments on the relevant lines.
-          claude_args: "--max-turns 5"
+          claude_args: "--max-turns 25"
