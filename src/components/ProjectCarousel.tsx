@@ -14,7 +14,7 @@ export default function ProjectCarousel({ images, projectTitle }: ProjectCarouse
 
     const goTo = useCallback(
         (next: number) => {
-            setCurrentIndex(((next % images.length) + images.length) % images.length);
+            setCurrentIndex((next + images.length) % images.length);
         },
         [images.length]
     );
@@ -56,7 +56,7 @@ export default function ProjectCarousel({ images, projectTitle }: ProjectCarouse
                 type="button"
                 onClick={() => goTo(currentIndex - 1)}
                 aria-label="Previous slide"
-                className="absolute top-1/2 left-2.5 -translate-y-1/2 grid place-items-center w-8 h-8 rounded-full bg-black/45 border border-white/15 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-black/70 z-10"
+                className="absolute top-1/2 left-2.5 -translate-y-1/2 grid place-items-center w-8 h-8 rounded-full bg-black/45 border border-white/15 text-white opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity duration-200 hover:bg-black/70 z-10"
             >
                 <ChevronLeft className="w-3.5 h-3.5" strokeWidth={2.5} />
             </button>
@@ -64,7 +64,7 @@ export default function ProjectCarousel({ images, projectTitle }: ProjectCarouse
                 type="button"
                 onClick={() => goTo(currentIndex + 1)}
                 aria-label="Next slide"
-                className="absolute top-1/2 right-2.5 -translate-y-1/2 grid place-items-center w-8 h-8 rounded-full bg-black/45 border border-white/15 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:bg-black/70 z-10"
+                className="absolute top-1/2 right-2.5 -translate-y-1/2 grid place-items-center w-8 h-8 rounded-full bg-black/45 border border-white/15 text-white opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-opacity duration-200 hover:bg-black/70 z-10"
             >
                 <ChevronRight className="w-3.5 h-3.5" strokeWidth={2.5} />
             </button>
