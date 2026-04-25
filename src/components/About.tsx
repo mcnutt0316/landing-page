@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import TechIcon, { TechName } from './TechIcon';
 
 const About = () => {
@@ -26,6 +27,17 @@ const About = () => {
           <p>
             When I&apos;m not coding, I&apos;m on the mats. I&apos;m a <span className="font-medium text-foreground">Brazilian Jiu-Jitsu black belt</span> with over a decade of training. That sport taught me more about patience and problem-solving than anything else.
           </p>
+        </div>
+
+        {/* Link to full About page */}
+        <div className="mt-8 text-center">
+          <Link
+            href="/about"
+            className="inline-flex items-center gap-1.5 text-sm font-mono font-medium text-accent hover:text-foreground transition-colors duration-150"
+          >
+            Read the full story
+            <span aria-hidden="true">→</span>
+          </Link>
         </div>
 
         {/* Technical Skills Section */}
