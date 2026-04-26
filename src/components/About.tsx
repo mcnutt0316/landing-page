@@ -17,15 +17,11 @@ const About = () => {
 
         <div className="space-y-6 text-lg leading-relaxed text-foreground/80">
           <p>
-            I&apos;m a self-taught developer working in <span className="font-medium text-foreground">TypeScript, JavaScript, Next.js, React, and Node.js</span>, with a solid handle on databases like <span className="font-medium text-foreground">MongoDB, Supabase, and Neon</span>. I transitioned into software from truck driving because I genuinely love building things.
+            I transitioned from <span className="font-medium text-foreground">commercial truck driving</span> to software development — not because of a career seminar, but because the logistics software I used every day was broken and I wanted to fix it. I started learning <span className="font-medium text-foreground">TypeScript</span> at night and never stopped.
           </p>
 
           <p>
-            I lean hard into <span className="font-medium text-foreground">AI tools</span> to move faster and ship better work. It&apos;s changed how I prototype and debug, and I think it&apos;s just a smarter way to build.
-          </p>
-
-          <p>
-            When I&apos;m not coding, I&apos;m on the mats. I&apos;m a <span className="font-medium text-foreground">Brazilian Jiu-Jitsu black belt</span> with over a decade of training. That sport taught me more about patience and problem-solving than anything else.
+            I&apos;m a <span className="font-medium text-foreground">Brazilian Jiu-Jitsu black belt</span> with 10+ years on the mat. That sport taught me to stay methodical under pressure, to treat every failure as data, and to keep showing up. Those aren&apos;t soft skills — they&apos;re the whole job.
           </p>
         </div>
 

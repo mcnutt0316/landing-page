@@ -7,6 +7,7 @@
   --accent-foreground: #ffffff;
   --gold: oklch(0.78 0.14 80);
   --green: oklch(0.72 0.14 145);
+  --belt: oklch(0.55 0.22 25);
 
   /* Tech brand colors */
   --tech-typescript: #3178c6;
@@ -26,6 +27,7 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-gold: var(--gold);
   --color-green: var(--green);
+  --color-belt: var(--belt);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

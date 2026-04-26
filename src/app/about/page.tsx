@@ -13,26 +13,26 @@ const TIMELINE = [
   {
     year: '2021',
     dot: 'plain' as const,
-    title: 'Commercial truck driver',
-    desc: 'Started running local auto hauling routes. Learned discipline, logistics, and how to stay calm when everything goes sideways.',
+    title: 'Behind the wheel',
+    desc: 'Running local car hauling routes — up to 9 vehicles per load, tight logistics, zero margin for error. Got very good at staying calm under pressure.',
   },
   {
     year: '2023',
     dot: 'accent' as const,
-    title: 'Started teaching myself to code',
-    desc: 'TypeScript, React, Next.js — learning in the margins. Built small projects to understand the fundamentals.',
+    title: 'First line of code',
+    desc: 'Opened a tutorial on a Friday night out of frustration. Closed it and started building instead. Learned TypeScript, React, and Next.js by shipping things that broke, then fixing them.',
   },
   {
     year: '2024',
     dot: 'accent' as const,
-    title: 'Shipped Car Hauler Platform',
-    desc: 'Full-stack logistics app. Solo project that evolved into a hackathon entry — and won 2nd place competing against experienced teams.',
+    title: '2nd place — hackathon',
+    desc: 'Took Car Hauler Platform to a hackathon with a team I’d never met. We competed against teams with years of professional experience and finished 2nd.',
   },
   {
     year: '2025 – now',
-    dot: 'gold' as const,
-    title: 'Building in public, looking for a team',
-    desc: 'Shipping Height Table, iterating on the portfolio, and actively looking for my first professional dev role.',
+    dot: 'belt' as const,
+    title: 'Shipping and looking for a team',
+    desc: 'Building Height Table, refining the portfolio, and looking for a team that wants someone with genuine grit and real-world domain depth.',
   },
 ];
 
@@ -43,13 +43,17 @@ export default function AboutPage() {
       <section className="grid grid-cols-1 lg:grid-cols-[1fr_160px] gap-10 items-start pb-14 mb-14 border-b border-foreground/10">
         <div>
           <div className="font-mono text-[11px] font-medium tracking-[0.1em] uppercase text-accent mb-4">
-            // about me
+            {'// about me'}
           </div>
           <h1 className="text-4xl lg:text-5xl font-bold tracking-tight leading-[1.15] mb-5">
-            From the open road to the terminal.
+            Truck driver.
+            <br />
+            Black belt.
+            <br />
+            Developer.
           </h1>
           <p className="text-[17px] leading-[1.75] text-foreground/70">
-            I&apos;m <strong className="text-foreground font-semibold">Corey</strong> — a self-taught software developer based in the US. I spent years driving commercial auto haulers before teaching myself to code. Now I build the kind of software I wished existed when I was out on the road.
+            I&apos;m <strong className="text-foreground font-semibold">Corey</strong> — self-taught, no CS degree, no bootcamp. I drove 18-wheelers loaded with cars for years, started coding at night because I was frustrated with software that didn&apos;t understand the job, and never stopped. Now I build things that actually solve problems — because I&apos;ve lived the problems.
           </p>
         </div>
         <div className="relative justify-self-start lg:justify-self-end">
@@ -98,16 +102,13 @@ export default function AboutPage() {
       <section className="mb-14">
         <SectionHeader icon="🚛" title="The backstory" />
         <p className="text-base leading-[1.8] text-foreground/70">
-          I drove car haulers locally — 18-wheelers loaded with 7–9 cars, running routes in and around my area. More loads per day, tighter turnarounds, and logistics problems that nobody had built good software for. I started teaching myself to code because I wanted to solve those problems myself.
+          Car hauling is not a relaxed gig. You&apos;re moving 7–9 vehicles on a single rig, managing load order by weight and delivery sequence, navigating height clearances on unfamiliar routes, and communicating with dealers who need real-time updates while you&apos;re doing 65 on the highway. It&apos;s a logistics problem that never stops.
         </p>
         <p className="text-base leading-[1.8] text-foreground/70 mt-4">
-          What started as curiosity turned into obsession. I spent nights and weekends learning TypeScript, React, and Next.js. I built my first real project — <strong className="text-foreground font-semibold">Car Hauler Platform</strong> — to prove I could ship something real. Then I took it to a hackathon, got assigned a team, and we won 2nd place.
+          The software available to drivers was, charitably, bad. So I started learning to code — not because I wanted a career change, but because I wanted to fix something broken. Nights, weekends, whenever. TypeScript, React, Next.js. I built <strong className="text-foreground font-semibold">Car Hauler Platform</strong> — not as a portfolio piece, but as a real tool. Then I took it to a hackathon, got assigned a team of strangers, and we finished 2nd place.
         </p>
-        <div
-          className="bg-accent/15 border border-accent/35 rounded-xl px-6 py-5 text-[15px] leading-[1.7] mt-6"
-          style={{ color: 'oklch(0.82 0.06 240)' }}
-        >
-          <strong className="text-white font-semibold">The domain expertise is real.</strong> I didn&apos;t build a generic logistics app from a tutorial. I built software I understood from the inside — the kind of load planning, safety compliance, and operational constraints that don&apos;t show up in any spec doc unless you&apos;ve lived them. That&apos;s a different kind of developer.
+        <div className="bg-accent/15 border border-accent/35 rounded-xl px-6 py-5 text-[15px] leading-[1.7] mt-6 text-foreground/80">
+          <strong className="text-foreground font-semibold">This isn&apos;t a pivot story — it&apos;s an obsession story.</strong> I didn&apos;t decide to become a developer. I became one because I couldn&apos;t stop building. The domain expertise isn&apos;t a footnote; it&apos;s the whole point. I know what the software needs to do because I was the person it failed.
         </div>
       </section>
 
@@ -122,15 +123,15 @@ export default function AboutPage() {
             >
               <div
                 className={`absolute left-[-24px] top-1 w-3.5 h-3.5 rounded-full bg-background border-2 flex items-center justify-center ${
-                  item.dot === 'gold'
-                    ? 'border-gold'
+                  item.dot === 'belt'
+                    ? 'border-belt'
                     : item.dot === 'accent'
                     ? 'border-accent'
                     : 'border-foreground/20'
                 }`}
               >
-                {item.dot === 'gold' && (
-                  <span className="w-1.5 h-1.5 rounded-full bg-gold" />
+                {item.dot === 'belt' && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-belt" />
                 )}
                 {item.dot === 'accent' && (
                   <span className="w-1.5 h-1.5 rounded-full bg-accent" />
@@ -158,10 +159,7 @@ export default function AboutPage() {
             className="relative w-20 h-[18px] rounded-sm overflow-hidden flex-shrink-0"
             style={{ background: '#1a0a00' }}
           >
-            <div
-              className="absolute right-0 top-0 bottom-0 w-3.5"
-              style={{ background: '#d4af37' }}
-            />
+            <div className="absolute right-0 top-0 bottom-0 w-3.5 bg-belt" />
           </div>
           <div>
             <div className="text-sm font-semibold font-mono">
@@ -171,10 +169,10 @@ export default function AboutPage() {
           </div>
         </div>
         <p className="text-base leading-[1.8] text-foreground/70">
-          BJJ has a saying: <em className="italic">&ldquo;A black belt is a white belt who never quit.&rdquo;</em> I think about that a lot when I&apos;m debugging something I don&apos;t understand yet. The mat taught me that patience isn&apos;t passive — it&apos;s the discipline to keep showing up and grinding through problems that don&apos;t have quick answers.
+          A black belt in BJJ means 10+ years of showing up to get submitted by people better than you, learning why it happened, and coming back tomorrow. There&apos;s no shortcut. You can&apos;t memorize your way through a live opponent — you have to actually understand the problem.
         </p>
         <p className="text-base leading-[1.8] text-foreground/70 mt-4">
-          Rolling with higher belts when you&apos;re a beginner is humbling in exactly the right way. You learn to be comfortable not knowing, to fail fast, and to always ask <em className="italic">why</em> something didn&apos;t work. That&apos;s the same mindset I bring to code.
+          That&apos;s exactly what debugging feels like. The mat trained me to stay calm when I don&apos;t understand what&apos;s happening, to be methodical under pressure, and to treat every loss as data. I&apos;ve been doing that for a decade. It carries over in ways that are hard to fake — and hard to teach in a bootcamp.
         </p>
       </section>
 
@@ -184,7 +182,7 @@ export default function AboutPage() {
       <section className="mb-14">
         <SectionHeader icon="⚙️" title="What I work with" />
         <p className="text-base leading-[1.8] text-foreground/70 mb-4">
-          I lean into <strong className="text-foreground font-semibold">AI tools</strong> to move faster — Claude, Cursor, and whatever helps me ship better work. It&apos;s changed how I prototype and debug.
+          I use <strong className="text-foreground font-semibold">AI tools</strong> aggressively — Claude, Cursor, and whatever helps me ship faster and think clearer. Not as a crutch. As a force multiplier. A self-taught developer who knows how to leverage AI is not a junior developer — that&apos;s a different category entirely.
         </p>
         <div className="flex flex-wrap gap-2 mt-4">
           {SKILLS.map((skill) => (
@@ -215,12 +213,12 @@ export default function AboutPage() {
           borderColor: 'oklch(0.35 0.10 145 / 0.4)',
         }}
       >
-        <div className="text-sm" style={{ color: 'oklch(0.80 0.10 145)' }}>
-          <span className="inline-flex items-center gap-2 font-semibold text-white">
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse inline-block flex-shrink-0" />
+        <div className="text-sm text-foreground/80">
+          <span className="inline-flex items-center gap-2 font-semibold text-foreground">
+            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse inline-block flex-shrink-0" />
             Available for new opportunities.
           </span>
-          {' '}Looking for a team that builds real things and isn&apos;t afraid of someone who came up a different way.
+          {' '}Looking for a team that ships real things and can appreciate someone who built a work ethic long before they wrote their first line of code.
         </div>
       </div>
 

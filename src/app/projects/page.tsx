@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { ExternalLink, Video } from "lucide-react";
 import { projects } from "@/data/projects";
 import ProjectCarousel from "@/components/ProjectCarousel";
@@ -140,12 +141,24 @@ const Projects = () => {
                   projectTitle={project.title}
                 />
                 <div className="space-y-2">
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 flex-wrap">
                     <h3 className="text-xl font-semibold text-foreground group-hover:text-accent transition-colors duration-200">
                       {project.title}
                     </h3>
+                    {project.slug === 'height-table' && (
+                      <span
+                        className="px-2 py-0.5 text-[10px] font-mono font-semibold uppercase tracking-wide rounded"
+                        style={{
+                          background: 'oklch(0.55 0.22 25 / 0.15)',
+                          color: 'oklch(0.70 0.18 25)',
+                          border: '1px solid oklch(0.55 0.22 25 / 0.35)',
+                        }}
+                      >
+                        Domain Depth
+                      </span>
+                    )}
                     <span className={`px-2 py-1 text-xs font-medium rounded ${
-                      project.status === "completed" 
+                      project.status === "completed"
                         ? "bg-green-500/20 text-green-700 dark:text-green-300"
                         : "bg-yellow-500/20 text-yellow-700 dark:text-yellow-300"
                     }`}>
@@ -203,18 +216,26 @@ const Projects = () => {
       {/* Call to Action */}
       <section className="text-center py-12 border-t border-foreground/10">
         <h2 className="text-2xl font-bold text-foreground mb-4">
-          Interested in working together?
+          Want to see more?
         </h2>
         <p className="text-foreground/70 mb-6 max-w-2xl mx-auto">
-          I&apos;m always excited to take on new challenges and create meaningful digital solutions.
-          Let&apos;s discuss how we can bring your ideas to life.
+          I&apos;m actively building and looking for a team. If something here resonates, let&apos;s talk.
         </p>
-        <button
-          onClick={openModal}
-          className="inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-lg bg-accent text-accent-foreground hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 transition-colors duration-200"
-        >
-          Get In Touch
-        </button>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+          <button
+            onClick={openModal}
+            className="inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-lg bg-accent text-accent-foreground hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 transition-colors duration-200"
+          >
+            Get In Touch
+          </button>
+          <Link
+            href="/about"
+            className="inline-flex items-center justify-center gap-1.5 px-8 py-3 text-base font-medium rounded-lg border border-foreground/20 text-foreground hover:border-foreground/40 hover:bg-foreground/5 transition-colors duration-200"
+          >
+            Read My Story
+            <span aria-hidden="true">→</span>
+          </Link>
+        </div>
       </section>
     </div>
   );

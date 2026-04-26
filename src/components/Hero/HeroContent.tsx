@@ -3,7 +3,6 @@
 import React from "react";
 import TechIcon, { TechName } from "../TechIcon";
 import Button from "../ui/Button";
-import Badge from "../ui/Badge";
 import SocialLinks from "../ui/SocialLinks";
 import { socialLinks } from "../../constants/socialLinks";
 import { featuredTechnologies, animationConfig } from "../../constants/technologies";
@@ -15,27 +14,32 @@ const HeroContent = () => {
 
   return (
     <div className="text-center lg:text-left space-y-8 order-2 lg:order-1">
-      {/* Role Badge */}
-      <Badge className="mb-6">
-        Software Developer & Creator
-      </Badge>
+      {/* Pill badge with animated green dot */}
+      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent font-mono text-xs font-semibold tracking-wide">
+        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+        self-taught · no degree · no bootcamp
+      </div>
 
-      {/* Primary Headline */}
-      <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-sans font-bold tracking-tight text-foreground leading-[1.1]">
-        👋 Hi, I&apos;m Corey — Software Developer & Creator
+      {/* Primary Headline — three lines, last has accent emphasis */}
+      <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-sans font-extrabold tracking-[-0.03em] text-foreground leading-[1.08]">
+        I drove trucks.
+        <br />
+        I earned a black belt.
+        <br />
+        Then I <em className="not-italic text-accent">taught myself</em> to code.
       </h1>
 
       {/* Subheadline */}
-      <h2 className="text-xl sm:text-2xl lg:text-3xl font-sans font-medium text-foreground/80 leading-relaxed lg:max-w-none max-w-3xl mx-auto lg:mx-0">
-        From the open road to the digital world, I specialize in building
-        web applications that make life easier, smarter, and more
-        enjoyable.
+      <h2 className="text-lg sm:text-xl font-sans font-normal text-foreground/60 leading-[1.65] lg:max-w-[540px] max-w-3xl mx-auto lg:mx-0">
+        <strong className="text-foreground font-semibold">I&apos;m Corey.</strong>{" "}
+        I build full-stack web applications — and I come with domain expertise
+        that no computer science program can teach. I know what good software
+        feels like to the people who actually need it.
       </h2>
 
-      {/* Description */}
-      <p className="text-base sm:text-lg text-foreground/60 leading-relaxed lg:max-w-none max-w-2xl mx-auto lg:mx-0">
-        Combining technical expertise with creative problem-solving, I
-        craft digital solutions that truly make a difference.
+      {/* Flat tech stack reference line */}
+      <p className="text-[15px] text-foreground/40 font-sans leading-relaxed lg:max-w-none max-w-2xl mx-auto lg:mx-0">
+        TypeScript · React · Next.js · Node.js · C# · ASP.NET Core · PostgreSQL
       </p>
 
       {/* CTA Buttons */}
@@ -49,42 +53,43 @@ const HeroContent = () => {
       </div>
 
       {/* Social Links */}
-      <SocialLinks 
-        links={socialLinks} 
-        className="justify-center lg:justify-start pt-6" 
+      <SocialLinks
+        links={socialLinks}
+        className="justify-center lg:justify-start pt-6"
       />
 
-      {/* Enhanced Status Indicator with Tech Showcase */}
-      <div className="flex items-center justify-center lg:justify-start gap-3 text-sm text-foreground/60">
+      {/* Status row — green available indicator + supporting credentials + rotating tech icon */}
+      <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-4 gap-y-2 font-mono text-xs text-foreground/40">
         <div className="flex items-center gap-2">
-          <span className="flex h-2 w-2 bg-green-500 rounded-full animate-pulse"></span>
-          <span className="font-mono">
-            Available for new opportunities
-          </span>
+          <span className="flex h-1.5 w-1.5 bg-green-500 rounded-full animate-pulse" />
+          <span>Available for new opportunities</span>
         </div>
-        <div className="hidden sm:flex items-center gap-2 text-xs">
-          <span className="text-foreground/40">•</span>
-          <span className="text-foreground/40">Building with</span>
+        <span className="text-foreground/30">·</span>
+        <span>2nd place, hackathon 2024</span>
+        <span className="text-foreground/30">·</span>
+        <span>BJJ black belt</span>
+        {/* Rotating tech icon — keeps the small "Building with [icon]" cue */}
+        <span className="hidden sm:inline text-foreground/30">·</span>
+        <div className="hidden sm:flex items-center gap-2">
+          <span>Building with</span>
           <div className="relative w-4 h-4 tech-rotate-container">
-            {featuredTechnologies.map(
-              (tech, index) => (
-                <div
-                  key={tech}
-                  className={`absolute inset-0 ${styles.techRotateItem} opacity-0`}
-                  style={{
-                    animationDelay: `${index * animationConfig.techRotateDelay}s`,
-                    animationDuration: `${animationConfig.techRotateDuration}s`,
-                  }}
-                >
-                  <TechIcon
-                    name={tech as TechName}
-                    size="sm"
-                    glowEffect={false}
-                    animate={false}
-                  />
-                </div>
-              )
-            )}
+            {featuredTechnologies.map((tech, index) => (
+              <div
+                key={tech}
+                className={`absolute inset-0 ${styles.techRotateItem} opacity-0`}
+                style={{
+                  animationDelay: `${index * animationConfig.techRotateDelay}s`,
+                  animationDuration: `${animationConfig.techRotateDuration}s`,
+                }}
+              >
+                <TechIcon
+                  name={tech as TechName}
+                  size="sm"
+                  glowEffect={false}
+                  animate={false}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
