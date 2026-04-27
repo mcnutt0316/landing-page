@@ -14,7 +14,7 @@ export const projects: Project[] = [
     links: {
       demo: 'https://carhauler.vercel.app/',
       github: '#', // Add your GitHub repo URL here
-      case_study: 'https://www.youtube.com/watch?v=dP5cNC95Ejk',
+      case_study: 'https://youtu.be/oV3YRHReBpc',
     },
     images: {
       hero: '/projects/car-hauler-hero.jpg',
