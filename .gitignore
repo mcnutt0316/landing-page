@@ -39,6 +39,9 @@ yarn-error.log*
 # git worktrees (isolated workspaces for parallel feature work)
 /.worktrees/
 
+# playwright mcp debug snapshots
+/.playwright-mcp/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
