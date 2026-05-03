@@ -203,16 +203,6 @@ export default async function ProjectPage({
               View Live Demo →
             </a>
           )}
-          {project.links.github && project.links.github !== '#' && (
-            <a
-              href={project.links.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg border border-foreground/20 text-foreground hover:bg-foreground/5 focus:outline-none focus:ring-2 focus:ring-foreground/20 focus:ring-offset-2 transition-colors duration-200"
-            >
-              View Source Code →
-            </a>
-          )}
         </section>
 
         {/* Back to Projects */}

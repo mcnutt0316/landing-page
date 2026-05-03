@@ -13,7 +13,6 @@ export const projects: Project[] = [
     featured: true,
     links: {
       demo: 'https://carhauler.vercel.app/',
-      github: '#', // Add your GitHub repo URL here
       case_study: 'https://youtu.be/oV3YRHReBpc',
     },
     images: {
@@ -62,7 +61,6 @@ export const projects: Project[] = [
     featured: false,
     links: {
       demo: 'https://stoic-quote-gen.vercel.app/',
-      github: '#', // Add your GitHub repo URL here
     },
     images: {
       hero: '/projects/stoic-quotes-hero.jpg',
@@ -104,7 +102,6 @@ export const projects: Project[] = [
     featured: false,
     links: {
       demo: 'https://premier-barbershop.vercel.app/',
-      github: '#', // Add your GitHub repo URL here
     },
     images: {
       hero: '/projects/barbershop-hero.jpg',
@@ -150,7 +147,6 @@ export const projects: Project[] = [
     featured: false,
     links: {
       demo: 'https://mill-creek-ruddy.vercel.app/',
-      github: '#',
     },
     images: {
       hero: '/projects/mill-creek-hero.jpg',
@@ -193,7 +189,6 @@ export const projects: Project[] = [
     featured: false,
     links: {
       demo: 'https://height-table.vercel.app/',
-      github: '#',
     },
     images: {
       hero: '/projects/height-table-hero.png',
