@@ -198,14 +198,6 @@ const Projects = () => {
                       Live Demo →
                     </a>
                   )}
-                  <a
-                    href={project.links.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-foreground/70 hover:text-foreground font-medium transition-colors duration-200"
-                  >
-                    View Code →
-                  </a>
                 </div>
               </div>
             </div>

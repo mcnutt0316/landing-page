@@ -1,6 +1,5 @@
 export interface ProjectLinks {
   demo?: string;
-  github?: string;
   case_study?: string;
 }
 
