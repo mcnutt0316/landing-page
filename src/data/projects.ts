@@ -98,18 +98,22 @@ export const projects: Project[] = [
     title: 'Premier Barbershop Website',
     description: 'A professional business website for a local barbershop featuring services, pricing, team profiles, and customer testimonials.',
     longDescription: 'A clean, professional website designed to establish online presence for Premier Barbershop. The site emphasizes transparency with clear pricing, team introductions, and a straightforward walk-in policy. Built with accessibility and local SEO in mind to help the business connect with their community.',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive Design', 'Netlify'],
+    technologies: ['HTML', 'CSS', 'JavaScript', 'Responsive Design', 'Vercel'],
     category: 'business-website',
     status: 'completed',
     featured: false,
     links: {
-      demo: 'https://teal-alpaca-933e8d.netlify.app/#contact',
+      demo: 'https://premier-barbershop.vercel.app/',
       github: '#', // Add your GitHub repo URL here
     },
     images: {
       hero: '/projects/barbershop-hero.jpg',
-      thumbnail: '/projects/barbershop-thumb.jpg',
-      gallery: ['/projects/barbershop-1.jpg', '/projects/barbershop-2.jpg'],
+      thumbnail: '/projects/barbershop-hours.jpg',
+      gallery: [
+        '/projects/barbershop-services.jpg',
+        '/projects/barbershop-team.jpg',
+        '/projects/barbershop-testimonials.jpg',
+      ],
     },
     metadata: {
       created_date: '2023-12',
